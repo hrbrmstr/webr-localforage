@@ -23,7 +23,7 @@ globalThis.R = async function R(strings, ...values) {
 	for (let i = 0; i < strings.length; i++) {
 		result += strings[ i ];
 	}
-	
+
 	let res, tmp;
 	if (options === undefined) {
 		tmp = await webR.evalR(result)

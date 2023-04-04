@@ -43,6 +43,9 @@
 
 <data-frame-view id="mtcars2" label="Copy of mtcars (serialized to local storage)"></data-frame-view>
 
+## If nothing else, you _sure_ are a persistent one, hrbrmstr
+
+
 ## FIN
 
 Source is on [GitHub](https://github.com/hrbrmstr/webr-localforage)

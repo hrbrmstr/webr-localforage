@@ -1,4 +1,4 @@
-# 🧪 🕸️ WebR + localForage
+# 🧪 🕸️ 🫙 WebR + localForage
 
 <status-message id="webr-status" text="WebR Loading…"></status-message>
 
@@ -11,7 +11,7 @@ Experiment hypothesis:
 Experiment parameters:
 
 - Webr
-- <span class="pill">New!</span> The ^^ mentioned `localForage`
-- <span class="pill">New!</span> A fairly reusable (but basic) Lit component to display a data frame with selected columns
+- (New!) The ^^ mentioned `localForage`
+- (New!) A fairly reusable (but basic) Lit component to display a data frame with selected columns
 - Lit (web components)
 - Vite (for building)

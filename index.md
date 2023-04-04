@@ -1,6 +1,6 @@
 ---
 {
-  "title": "🧪 Webr + localForage",
+  "title": "🧪 Webr + localForage 🫙",
    "description": "When you need to keep R stuff around for a bit.",
   "og" : {
     "site_name": "WebR Exeriments",
@@ -31,7 +31,7 @@
 	]
 }
 ---
-# 🧪 🕸️ WebR + localForage
+# 🧪 🕸️ 🫙 WebR + localForage
 
 <status-message id="webr-status" text="WebR Loading…"></status-message>
 

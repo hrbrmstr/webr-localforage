@@ -1,6 +1,6 @@
 # 🧪 🕸️ 🫙 WebR + localForage
 
-<status-message id="webr-status" text="WebR Loading…"></status-message>
+![](src/preview.png)
 
 ## When you need to keep R stuff around for a bit.
 

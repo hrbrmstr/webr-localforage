@@ -1,6 +1,6 @@
 # 🧪 🕸️ 🫙 WebR + localForage
 
-![](src/preview.png)
+![](public/preview.png)
 
 ## When you need to keep R stuff around for a bit.
 

@@ -108,6 +108,3 @@ const res = await webR.evalR(`options(width=60); serialize(head(mtcars, 1), NULL
 	captureStreams: true,
 	withAutoprint: true
 })
-
-
-

@@ -34,6 +34,22 @@ const removeLabel = 'Remove local copy of `mtcars`'
 const itsHereMessage = `Quit the browser (optional) and reload the page to see this automagically reappear! Hit '${removeLabel}' to make me (and the table) go away!`
 const colsToShow = [ "wt", "mpg", "drat", "cyl", "qsec", "gear" ]
 
+// make the code a bit more semantic
+
+/**
+ * Wrapper to make it a bit more straightforward to retrieve an item
+ * from local storage and unserialize it in R
+ * 
+ * @param {string} rObjKeyName the key value you used to store the R object
+ * @returns {RObject}
+ */
+async function unserialze(rObjKeyName) {
+	const opts = {
+		env: { tempObj: await lf.getItem(rObjKeyName) }
+	}
+	return Promise.resolve(webR.evalR(`unserialize(as.raw(tempObj))`, opts))
+}
+
 // if data existed, this will let us clear it
 async function clearAction(e) {
 
@@ -69,10 +85,7 @@ if (keys.includes('mtcars')) {
 	actionButton.label = removeLabel
 	actionButton.onClick = clearAction;
 
-	const opts = {
-		env: { mtcars_serialized: await lf.getItem('mtcars') }
-	}
-	const res = await webR.evalR("unserialize(as.raw(mtcars_serialized))", opts)
+	const res = await unserialze("mtcars")
 	
 	mtcars2.columns = colsToShow
 	mtcars2.dataFrame = await res.toJs()

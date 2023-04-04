@@ -20,7 +20,7 @@ export class SimpleMessage extends LitElement {
 			:host {
 				display: block;
 				color: var(--component-message-color);
-				font-family: monospace;
+				font-family: var(--font-family-monospace);
 			}
 		`
 	];

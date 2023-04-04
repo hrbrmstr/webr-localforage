@@ -104,7 +104,7 @@ export class DataFrameView extends LitElement {
 				display: none;
 			}
 			:host table {
-				font-family: monospace;
+				font-family: var(--font-family-monospace, monospace);
 			}
 			:host th {
 				text-align: right;

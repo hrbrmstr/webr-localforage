@@ -1,6 +1,60 @@
-:root {
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Bold.woff') format('woff');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Italic.woff') format('woff');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Medium.woff') format('woff');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-MediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'Comic Code Ligatures', sans-serif;
+}
+
+.pill {
+	display: inline-block;
+	border-radius: 20px;
+	background-color: #1e7069;
+	padding-left: 8px;
+	padding-right: 8px;
+	font-size: 16px;
+}
+
+:root,
+* {
 	--font-size-base: 16px;
-	--font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-family-base: 'Rubik', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-family-monospace: 'Comic Code Ligatures', 'JetBrains Mono', 'Fira Code', monospace;
 	--font-style-base: normal;
 	--body-1: --font-size-base;
 	--neutral-1: 0, 0, 0;
@@ -19,19 +73,18 @@
 	--text-1: rgba(0, 0, 0, .90);
 	--text-2: rgba(0, 0, 0, .60);
 	--text-3: rgba(0, 0, 0, .20);
-	--functional-blue: 20, 120, 220;
-	--functional-red: 220, 40, 40;
-	--functional-yellow: 220, 160, 40;
-	--functional-green: 40, 160, 40;
 	--shadow-1: 0 2px 8px rgba(0, 0, 0, .1), 0 1px 4px rgba(0, 0, 0, .05);
 	--spacing-s: 8px;
 	--spacing-xs: calc(var(--spacing-s) / 2);
 	--spacing-m: calc(var(--spacing-s) * 1.5);
 	--spacing-l: calc(var(--spacing-s) * 2);
+	--background-color: white;
+	--foreground-color: #1c1c1e;
 }
 
 html,
 body {
+	background: var(--background-color);
 	font-family: var(--font-family-base);
 	font-size: var(--font-size-base);
 	font-style: var(--font-style-base);
@@ -43,7 +96,7 @@ body {
 	/* allows scrolling past content */
 	overflow: auto;
 	margin: 0 auto;
-	max-width: 60rem;
+	max-width: 45rem;
 	/* Adjust this value to set a maximum width */
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: transparent;
@@ -56,11 +109,16 @@ div {
 }
 
 h1 {
+	display: inline-block;
 	font-size: calc(var(--font-size-base) * 2);
+	line-height: 2rem;
+	padding-left: 2.4rem;
+	text-indent: -2.4rem;
 }
 
 h2 {
 	font-size: calc(var(--font-size-base) * 1.5);
+	line-height: 1.5rem;
 }
 
 h3 {
@@ -69,6 +127,7 @@ h3 {
 
 h4 {
 	font-size: calc(var(--font-size-base) * 0.75);
+	line-height: 0.75rem;
 }
 
 .widget {
@@ -77,19 +136,24 @@ h4 {
 }
 
 pre {
-	font-size: calc(var(--font-size-base) * 1.1);
+	font-family: var(--font-family-monospace);
+	font-size: calc(var(--font-size-base) * 0.9);
 }
 
 pre,
 code {
+	font-family: var(--font-family-monospace);
+	font-size: calc(var(--font-size-base) * 0.9);
 	line-height: 1rem;
 }
 
 pre.shiki {
+	font-family: var(--font-family-monospace);
+	font-size: calc(var(--font-size-base) * 0.9);
 	border: 1px solid gray;
 	overflow-x: auto;
 	overflow-y: scroll;
-	padding: 2rem;
+	padding: 1.25rem;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 }
@@ -122,7 +186,11 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
+
+	:root,
 	* {
+		--background-color: #1c1c1e;
+		--foreground-color: white;
 		--neutral-1: 255, 255, 255;
 		--neutral-2: 0, 0, 0;
 		--accent-1: 60, 100, 240;
@@ -143,6 +211,6 @@ a {
 	}
 
 	body {
-		background-color: #1c1c1e;
+		background: var(--background-color);
 	}
 }

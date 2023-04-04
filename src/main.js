@@ -3,15 +3,16 @@ import './simple-message.js'
 import "./action-button.js"
 import "./data-frame-view.js"
 
-import * as localforage from "localforage";
+// `lf` is way easier to type
+import * as lf from "localforage";
 
 let webrMessage = document.getElementById("webr-status");
 webrMessage.text = ""
 
 import './r.js'
 
-// `lf` is way easier to type
-globalThis.lf = localforage
+// in case we want to play around in the DevTools Console
+globalThis.lf = lf
 
 // configure our local storage
 lf.config({

@@ -79,8 +79,9 @@ export class DataFrameView extends LitElement {
 
 			this.dataFrame && Object.keys(this.dataFrame).includes("type"),
 
-			() => html`<div id="${this.id}">
+			() => html`
 			<h3>${this.label}</h3>
+			<div id="tbl">
 			${simple_table(webRDFToJS(this.dataFrame), cols)}
 			</div>`,
 
@@ -95,12 +96,12 @@ export class DataFrameView extends LitElement {
 			:host {
 				display: block;
 			}
-			:host div {
+			:host div#tbl {
 				overflow-y: scroll;
 				height: 300px;
 				scrollbar-width: none;
 			}
-			:host div::-webkit-scrollbar { 
+			:host div#tbl::-webkit-scrollbar { 
 				display: none;
 			}
 			:host table {
